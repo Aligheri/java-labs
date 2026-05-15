@@ -46,17 +46,13 @@ public class Auditorium {
     public boolean isOccupied()    { return occupied; }
 
     public void occupy() {
-        if (!occupied)
-            occupied = true;
-        else
-            System.out.println("Auditorium " + number + " is already occupied.");
+        if (!occupied) occupied = true;
+        else System.out.println("Auditorium " + number + " is already occupied.");
     }
 
     public void free() {
-        if (occupied)
-            occupied = false;
-        else
-            System.out.println("Auditorium " + number + " is already free.");
+        if (occupied) occupied = false;
+        else System.out.println("Auditorium " + number + " is already free.");
     }
 
     public boolean canFit(int students) {
@@ -66,13 +62,6 @@ public class Auditorium {
     public void printInfo() {
         System.out.printf("Auditorium #%-4d | capacity: %-3d | type: %-12s | floor: %d | %s%n",
                 number, capacity, type, floor, occupied ? "OCCUPIED" : "FREE");
-    }
-
-    public void printInfo(boolean showFloor) {
-        if (showFloor)
-            System.out.printf("Auditorium #%d (floor %d) - %s%n", number, floor, occupied ? "OCCUPIED" : "FREE");
-        else
-            System.out.printf("Auditorium #%d - %s%n", number, occupied ? "OCCUPIED" : "FREE");
     }
 
     public static int getTotalCount() { return totalCount; }
